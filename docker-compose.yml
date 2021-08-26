@@ -2,6 +2,7 @@ version: "3.8"
 services:
   db:
     image: postgres
+    container_name: portcast_postgres_1
     environment:
       - POSTGRES_DB=shipping_eta_info
       - POSTGRES_USER=postgres
@@ -13,4 +14,5 @@ services:
 
   scrapy:
     build: .
+    container_name: portcast_scrapy_1
     command: tail -F anything
